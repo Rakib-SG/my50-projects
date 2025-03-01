@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* ===x=== Variables css ===x===*/
+:root{
+    /* Font & typography */
+    --font-family1: 'Montserrat', sans-serif;
+    --normal-font-size: .938rem;
+
+    /* Font weight */
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* z index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: var(--normal-font-size);
+    font-family: var(--font-family1);
+    font-size: 1.125rem;
+    line-height: 1.3;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+.container{
+    max-width: 1120;
+    margin-inline: 1.5rem;
+}
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    z-index: var(--z-fixed);
+}
+
+.nav{
+    height: 3.5rem;
+}
+:is(.nav__logo, .nav__burger, .nav__close){
+    color: #fff;
+}
+.nav__data{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__logo{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+}
+.nav__logo i{
+    font-weight: initial;
+    font-size: 1.25rem;
+}
+.nav__toggle{
+    
+    position: relative;
+    width: 32px;
+    height: 32px;
+   
+}
+.nav__burger,
+.nav__close{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition:  opacity .1s, transform .4s;
+}
+.nav__close{
+    opacity: 0;
+}
+
+
+
+/* Navigation for mobile devices */
+@media (width <= 1118px){
+    .nav__menu{
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        background: gray;
+        height: calc(100vh - 3.5rem);
+        /* overflow: auto;
+        pointer-events: none;
+        opacity: 0; */
+        transition:  top .4s, opacity .3s;
+    }
+    .nav__menu::-webkit-scrollbar{
+        width: 0;
+    }
+    .nav__list{
+        background: black;
+        padding-top: 1rem;
+    }
+}
+.nav__link{
+    color: white;
+    background: black;
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: ;
+}
